@@ -35,3 +35,15 @@ To run the game, execute the `app.py` file:
 ```sh
 python snakegame.py
 ```
+## Project Structure
+
+```bash
+snake-game/
+│
+├── game_constants.py    # Contains constants like colors, screen dimensions, and snake speed
+├── game_functions.py    # Contains helper functions for displaying score and game over
+├── game_logic.py        # Contains the main game loop and logic
+├── app.py               # Main entry point to run the game
+├── requirements.txt     # List of dependencies
+└── README.md            # Project documentation
+```
