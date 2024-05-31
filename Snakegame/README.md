@@ -13,8 +13,8 @@ This repository contains a classic Snake game implemented using Pygame. The game
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/snake-game.git
-    cd snake-game
+    git clone https://github.com/SanjeevM2004/DSA_projects/tree/main/Snakegame
+    cd Snakegame
     ```
 
 2. **Create a virtual environment and activate it:**
