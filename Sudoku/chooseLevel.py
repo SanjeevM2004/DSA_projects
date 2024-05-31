@@ -14,7 +14,7 @@ X = 300
 Y = 200
 size = (X, Y)
 window = pygame.display.set_mode(size)
-font = pygame.font.Font('freesansbold.ttf', 25) #
+font = pygame.font.Font('freesansbold.ttf', 25) 
 
 
 
@@ -41,9 +41,9 @@ def chooseLevel():
     while done:
         window.fill(WHITE)
         window.blit(text, textRect)
-        drawButton(40, 100, GRAY, "1")
-        drawButton(120, 100, GRAY, "2")
-        drawButton(200, 100, GRAY, "3")
+        drawButton(40, 100, GRAY, "1")  #When 1 is clicked 30 numbers are deleted - Easy
+        drawButton(120, 100, GRAY, "2") #When 2 is clicked 40 numbers are deleted - Medium
+        drawButton(200, 100, GRAY, "3") #When 3 is clicked 50 numbers are deleted - Hard
         pos = pygame.mouse.get_pos()
 
         for event in pygame.event.get():
@@ -53,7 +53,6 @@ def chooseLevel():
                 # quit the program.
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                # print("Click ", pos)
                 if (40 <= pos[0] <= 100) and (100 <= pos[1] <= 130):
                     level = 1
                 if (120 <= pos[0] <= 180) and (100 <= pos[1] <= 130):

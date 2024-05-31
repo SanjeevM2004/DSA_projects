@@ -17,16 +17,15 @@ Board = [
 solvedBoard = copy.deepcopy(Board)
 
 def solve(board):
-    # end condition:- getting to the end of the board - the function findEmpty return NONE
     find = findEmpty(board)
-    if find is None:  # if find != False
+    if find is None: 
         return True
     else:
         row, col = find
     for number in range(1, 10):
-        if validCheck(board, number, (row, col)):
+        if validCheck(board, number, (row, col)): #Check if the number is already in the row or column or in the 3*3 matrix
             board[row][col] = number
-            if solve(board):
+            if solve(board): 
                 return True
             board[row][col] = 0
     return False
@@ -37,4 +36,3 @@ def mainSolver(level):
     solvedBoard = copy.deepcopy(Board)
     solve(solvedBoard)
     return solvedBoard
-   #Done

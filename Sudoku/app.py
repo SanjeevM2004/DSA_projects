@@ -39,7 +39,7 @@ def cheatingAllTheWay(sol):
         for column in range(len(Board[row])):
           if Board[row][column] == 0: #Update unsolved locations
             Board[row][column] = sol[row][column] #Use the solution to update board
-            addNumToBoard(Board[row][column], row, column, L_GREEN)
+            addNumToBoard(Board[row][column], row, column, L_GREEN) # Correct number 
             time.sleep(0.05)
             pygame.display.flip()
     finish(sol)
@@ -140,15 +140,12 @@ if __name__ == "__main__":
 
     print("solveBoard")
     printBoard(sol)
-
-    # ------ draw the board ------
     pygame.init()
     screen.fill(BLACK)
     drawInitBoard()
     readyForInput = False
     key = None
     while not done:
-        # --- Main event loop - main
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -158,10 +155,9 @@ if __name__ == "__main__":
                     key = chr(event.key)
                 if event.key == pygame.K_RETURN:
                     finish(sol)
-                if event.key == pygame.K_c: #Press 'c' to auto solve the whole board. 
+                if event.key == pygame.K_c: 
                     cheatingAllTheWay(sol)
             if event.type == pygame.MOUSEBUTTONDOWN:
-                # ------ if clicked on a cell get his row and column ------
                 if readyForInput is True:
                     addNewRect(row, column, WHITE, None)
                     drawTheBorder()
@@ -170,32 +166,22 @@ if __name__ == "__main__":
                 pos = pygame.mouse.get_pos()
                 column = pos[0] // (WIDTH + MARGIN)
                 row = pos[1] // (WIDTH + MARGIN)
-                # ------ checking if it is a empty (0 inside) ------
                 if Board[row][column] == 0:
-                    # ------ coloring the border of the clicked cell ----- #TODO YELLOW
-                   
                     addNewRect(row, column, YELLOW, 5)
                     readyForInput = True
-                    # ------ now only wait for input from the user -----
-
         if readyForInput and key is not None:
-            # ------ checking if the key is good at it's place ------
             if int(key) == sol[row][column]:
                 Board[row][column] = key
-                flickering(0.1, GREEN)  # flickering at a 0.2 seconds with the color green
+                flickering(0.1, GREEN) 
                 addNumToBoard(key, row, column, L_GREEN)
             else:
-                flickering(0.1, RED)  # flickering at a 0.2 seconds with the color red
+                flickering(0.1, RED)
                 addNumToBoard(key, row, column, L_RED)
-
-            # -----------------------------------------------
             drawTheBorder()
             readyForInput = False
 
         key = None
         pygame.display.flip()
         pygame.display.update()
-
-
-# Close the window and quit.
+        
 pygame.quit()
