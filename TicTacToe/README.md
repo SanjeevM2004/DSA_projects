@@ -44,5 +44,6 @@ tic-tac-toe/
 ├── main.py               # Main entry point to run the game
 ├── ui.py                 # UI functions using Pygame
 ├── requirements.txt      # List of dependencies
+├── Dockerfile            # Docker configuration file
 └── README.md             # Project documentation
 ```

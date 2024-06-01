@@ -45,5 +45,6 @@ snake-game/
 ├── game_logic.py        # Contains the main game loop and logic
 ├── app.py               # Main entry point to run the game
 ├── requirements.txt     # List of dependencies
+├── Dockerfile           # Docker configuration file
 └── README.md            # Project documentation
 ```
